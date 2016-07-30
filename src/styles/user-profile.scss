@@ -1,0 +1,36 @@
+$profile-font-color: #575757;
+$female-img-color: #f00;
+
+.profile {
+  color: $profile-font-color;
+  font-family: Arial;
+  height: 96px;
+  margin: 0 auto;
+  padding-right: 19px;
+  width: 728px;
+}
+
+.profile-name {
+  display: inline;
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 96px;
+  padding-left: 10px;
+}
+
+.profile-address {
+  float: right;
+  font-size: 18px;
+  font-weight: normal;
+  list-style: none;
+  text-align: center;
+}
+
+.profile-img {
+  float: left;
+}
+
+.avitar-img {
+  border: solid $female-img-color 4px;
+}

@@ -10,5 +10,13 @@
   "license": "UNLICENSED",
   "dependencies": {
     "angular": "^1.5.8"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sequence": "^0.4.5",
+    "gulp-watch": "^4.3.9"
   }
 }
