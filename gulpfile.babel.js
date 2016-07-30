@@ -5,6 +5,8 @@ const sass = require('gulp-sass');
 const sassLint = require('gulp-sass-lint');
 const browserSync = require('browser-sync').create();
 const sequence = require('gulp-sequence');
+const browserify = require('gulp-browserify');
+const concat = require('gulp-concat');
 
 gulp.task('sass', () => {
   return gulp.src('./src/styles/*.scss')
@@ -25,10 +27,19 @@ gulp.task('cp', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(['./src/styles/*.scss'], ['sass:lint', 'sass', 'cp']);
+  gulp.watch(['./src/styles/*.scss', './src/*.html'], ['sass:lint', 'sass', 'cp', 'js']);
   gulp.watch('./src/styles/*.scss').on('change', () => {
     setTimeout(browserSync.reload, 500);
   });
+});
+
+gulp.task('js', () => {
+  gulp.src('./src/*.js')
+  .pipe(browserify({
+    insertGlobals : true,
+  }))
+  .pipe(concat('user-profile.js'))
+  .pipe(gulp.dest('./dist/js'))
 });
 
 gulp.task('serve', function() {
