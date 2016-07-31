@@ -27,8 +27,8 @@ gulp.task('cp', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch(['./src/styles/*.scss', './src/*.html'], ['sass:lint', 'sass', 'cp', 'js']);
-  gulp.watch('./src/styles/*.scss').on('change', () => {
+  gulp.watch(['./src/styles/*.scss', './src/*.html', './src/**/*.js'], ['sass:lint', 'sass', 'cp', 'js']);
+  gulp.watch(['./src/styles/*.scss', './src/*.html', './src/**/*.js']).on('change', () => {
     setTimeout(browserSync.reload, 500);
   });
 });

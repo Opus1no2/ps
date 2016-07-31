@@ -33175,21 +33175,39 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
-var WelcomeCtrl = function($scope) {
-  $scope.testVar = 'We are up and running from a required module!';
+module.exports = class Profile {
+  constructor($scope, dataservice) {
+    $scope.userData = 'user data';
+  }
 };
 
-module.exports = WelcomeCtrl;
 
 }).call(this,require("7YKIPe"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/components/user-profile.controller.js","/components")
 },{"7YKIPe":5,"buffer":4}],8:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
+'use strict'
+
+const dataservice = ($http) => {
+  return $http.get('http://applicant.pointsource.us/api/testUser/57981d6ff62a2d8f3c05db76')
+  .then((data) => {
+    console.log(data)
+  })
+  .catch((error) => {
+    console.log('XHR Failed for.' + error.data);
+  });
+}
+
+module.exports = dataservice;
+
+}).call(this,require("7YKIPe"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/components/user-profile.factory.js","/components")
+},{"7YKIPe":5,"buffer":4}],9:[function(require,module,exports){
+(function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
 
 const angular = require('angular');
-const userProfile = require('./components/user-profile.controller');
-console.log(userProfile);
-angular.module('userProfile', []);
+angular.module('userProfile', [])
+  .factory('dataservice', require('./components/user-profile.factory'))
+  .controller('profiles', require('./components/user-profile.controller'))
 
-}).call(this,require("7YKIPe"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_4e56fa3b.js","/")
-},{"./components/user-profile.controller":7,"7YKIPe":5,"angular":2,"buffer":4}]},{},[8])
+}).call(this,require("7YKIPe"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_75868fef.js","/")
+},{"./components/user-profile.controller":7,"./components/user-profile.factory":8,"7YKIPe":5,"angular":2,"buffer":4}]},{},[9])
