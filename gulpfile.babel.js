@@ -36,7 +36,7 @@ gulp.task('serverjs', () => {
 
 gulp.task('views', () => {
   gulp.src(['./src/client/views/*'])
-    .pipe(gulp.dest('./dist/client'))
+    .pipe(gulp.dest('./dist/client/views'))
 });
 
 gulp.task('js', () => {
