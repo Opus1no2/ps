@@ -1,5 +1,4 @@
 'use strict';
-//foo
 const angular = require('angular');
 angular.module('userProfile', [])
   .factory('dataservice', require('./components/user-profile.factory'))
