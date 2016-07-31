@@ -24,5 +24,8 @@
 .profile-img {
   float: left; }
 
-.avitar-img {
+.avitarfemale {
   border: solid #f00 4px; }
+
+.avitarmale {
+  border: solid #0000ff 4px; }

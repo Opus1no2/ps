@@ -33177,7 +33177,16 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 module.exports = class Profile {
   constructor($scope, dataservice) {
-    $scope.userData = 'user data';
+    dataservice.getProfiles().then((data) => {
+      window.data = data;
+      $scope.userData = {
+        name: `${data.person['given-name']} ${data.person['family-name']}`,
+        addr1: `${data.person.address['house-#']} ${data.person.address['street-name']}`,
+        addr2: `${data.person.address.city}, ${data.person.address.st}`,
+        zip: data.person.address.zip,
+        sex: data.person.sex
+      }
+    });
   }
 };
 
@@ -33188,13 +33197,17 @@ module.exports = class Profile {
 'use strict'
 
 const dataservice = ($http) => {
-  return $http.get('http://applicant.pointsource.us/api/testUser/57981d6ff62a2d8f3c05db76')
-  .then((data) => {
-    console.log(data)
-  })
-  .catch((error) => {
-    console.log('XHR Failed for.' + error.data);
-  });
+  return {
+    getProfiles() {
+      return $http.get('http://localhost:8888/user/profiles')
+        .then((data) => {
+          return data.data
+        })
+        .catch((error) => {
+          console.log('XHR Failed for.' + error.data);
+        });
+    }
+  }
 }
 
 module.exports = dataservice;
@@ -33209,5 +33222,5 @@ angular.module('userProfile', [])
   .factory('dataservice', require('./components/user-profile.factory'))
   .controller('profiles', require('./components/user-profile.controller'))
 
-}).call(this,require("7YKIPe"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_75868fef.js","/")
+}).call(this,require("7YKIPe"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_36366ad8.js","/")
 },{"./components/user-profile.controller":7,"./components/user-profile.factory":8,"7YKIPe":5,"angular":2,"buffer":4}]},{},[9])

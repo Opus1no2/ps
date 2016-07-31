@@ -1,5 +1,6 @@
 $profile-font-color: #575757;
 $female-img-color: #f00;
+$male-img-color: #0000ff;
 
 .profile {
   color: $profile-font-color;
@@ -31,6 +32,10 @@ $female-img-color: #f00;
   float: left;
 }
 
-.avitar-img {
+.avitarfemale {
   border: solid $female-img-color 4px;
+}
+
+.avitarmale {
+  border: solid $male-img-color 4px;
 }
