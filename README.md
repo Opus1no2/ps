@@ -1,3 +1,18 @@
-People Profiles
+User Profiles
 ---------------
-A basic list of profiles
+A basic App that displays a user profile
+
+Getting Started
+---------------
+Install dependencies:
+
+```
+npm install
+```
+
+Start the application:
+
+```
+npm start
+```
+
