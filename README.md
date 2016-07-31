@@ -16,3 +16,5 @@ Start the application:
 npm start
 ```
 
+Lastly, Navigate [here](http://localhost:8888)
+
