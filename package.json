@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Profiles for fun and for profit",
   "scripts": {
+    "start": "node src/server | gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "https://github.com/Opus1no2/ps",
