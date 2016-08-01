@@ -1,7 +1,8 @@
 const http = require('http')
+const config = require('./config')
 
 module.exports = (req, res) => {
-  http.get('http://applicant.pointsource.us/api/testUser/57981d6ff62a2d8f3c05db76', (resp) => {
+  http.get(config.endpoint, (resp) => {
     resp.on('data', (chunk) => {
       res.send(chunk.toString());
     });

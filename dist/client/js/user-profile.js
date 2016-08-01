@@ -33178,7 +33178,6 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 module.exports = class Profile {
   constructor($scope, dataservice) {
     dataservice.getProfiles().then((data) => {
-      window.data = data;
       $scope.userData = {
         name: `${data.person['given-name']} ${data.person['family-name']}`,
         addr1: `${data.person.address['house-#']} ${data.person.address['street-name']}`,
@@ -33216,13 +33215,12 @@ module.exports = dataservice;
 },{"buffer":4,"km4Umf":5}],9:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 'use strict';
-//foo
 const angular = require('angular');
 angular.module('userProfile', [])
   .factory('dataservice', require('./components/user-profile.factory'))
   .controller('profiles', require('./components/user-profile.controller'))
 
-}).call(this,require("km4Umf"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_54ddaa79.js","/")
+}).call(this,require("km4Umf"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_ecab564c.js","/")
 },{"./components/user-profile.controller":7,"./components/user-profile.factory":8,"angular":2,"buffer":4,"km4Umf":5}]},{},[9])
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
@@ -34627,7 +34625,6 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 module.exports = class Profile {
   constructor($scope, dataservice) {
     dataservice.getProfiles().then((data) => {
-      window.data = data;
       $scope.userData = {
         name: `${data.person['given-name']} ${data.person['family-name']}`,
         addr1: `${data.person.address['house-#']} ${data.person.address['street-name']}`,
@@ -34640,7 +34637,7 @@ module.exports = class Profile {
 };
 
 
-}).call(this,require("km4Umf"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_278f6155.js","/")
+}).call(this,require("km4Umf"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_b1908339.js","/")
 },{"buffer":2,"km4Umf":3}]},{},[5])
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
@@ -36058,5 +36055,5 @@ const dataservice = ($http) => {
 
 module.exports = dataservice;
 
-}).call(this,require("km4Umf"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_30cb1c07.js","/")
+}).call(this,require("km4Umf"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_ecfc130f.js","/")
 },{"buffer":2,"km4Umf":3}]},{},[5])
