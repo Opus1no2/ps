@@ -1,5 +1,5 @@
 const http = require('http')
-const config = require('./config')
+const config = require('../config/config')
 
 module.exports = (req, res) => {
   http.get(config.endpoint, (resp) => {
